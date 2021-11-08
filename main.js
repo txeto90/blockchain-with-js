@@ -1,3 +1,4 @@
+const qrgenerator = require ('./qrgenerator');
 const SHA256 = require('crypto-js/sha256');
 
 class Block {
@@ -61,7 +62,9 @@ class BlockChain{
 }
 
 console.log('comença')
-let cacaCoin = new BlockChain('info de principi/genesis', '00');
-cacaCoin.addBlock('nem a fer-mos millonaris');
-cacaCoin.addBlock('valgo una caca');
-console.log(JSON.stringify(cacaCoin, null, 2))
+let origenAlimento = new BlockChain('Spain', '00');
+origenAlimento.addBlock('France');
+origenAlimento.addBlock('Italy');
+console.log(JSON.stringify(origenAlimento, null, 2))
+
+qrgenerator.createQr(JSON.stringify(origenAlimento, null, 2))
